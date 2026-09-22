@@ -1,0 +1,12 @@
+.DS_Store
+.idea/
+*.zip
+
+# Local LoRaWAN credentials
+firmware/smart_mushroom_box/secrets.h
+
+# Arduino build output
+build/
+*.elf
+*.hex
+
