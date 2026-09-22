@@ -42,5 +42,3 @@ void loop() {
     Serial.println(TSL2561.readVisibleLux());
     delay(1000);
 }
-
-

@@ -43,4 +43,3 @@ const group23MushroomMapping = {
 };
 
 module.exports = group23MushroomMapping;
-

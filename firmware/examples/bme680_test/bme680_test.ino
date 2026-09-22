@@ -18,7 +18,7 @@ Seeed_BME680 bme680(IIC_ADDR); /* IIC PROTOCOL */
 void setup() {
     Serial.begin(9600);
     while (!Serial);
-    Wire.begin();  
+    Wire.begin();
     pinMode(PIN_GROVE_POWER, OUTPUT);
     digitalWrite(PIN_GROVE_POWER, HIGH);  // ← 打开电源
     Serial.println("Power to Grove enabled");
@@ -57,4 +57,3 @@ void loop() {
 
     delay(2000);
 }
-

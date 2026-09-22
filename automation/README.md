@@ -16,4 +16,3 @@ To reuse it with infrastructure you control, configure these secrets or environm
 - optional `FROST_API_TOKEN`
 
 Run without `--submit` to inspect the payloads safely. Add `--submit` only when the target FROST instance and Datastream IDs are yours.
-

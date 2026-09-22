@@ -21,4 +21,3 @@ jobs:
           FROST_HUMIDITY_DATASTREAM_ID: ${{ secrets.FROST_HUMIDITY_DATASTREAM_ID }}
           FROST_API_TOKEN: ${{ secrets.FROST_API_TOKEN }}
         run: python automation/weather_uploader.py --location Munich --submit
-
