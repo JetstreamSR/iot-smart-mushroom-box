@@ -1,0 +1,51 @@
+{
+  "@iot.selfLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1670)",
+  "@iot.id": 1670,
+  "name": "Group23_mushroom_LuminousFlux",
+  "description": "The luminosity inside mushroom box.",
+  "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+  "unitOfMeasurement": {
+    "name": "Luminous Flux",
+    "symbol": "Lux",
+    "definition": "http://www.qudt.org/qudt/owl/1.0.0/quantity/Instances.html#LuminousFlux"
+  },
+  "observedArea": {
+    "type": "Point",
+    "coordinates": [
+      48.171594012,
+      11.561421897
+    ]
+  },
+  "phenomenonTime": "2025-07-10T20:30:49.609Z/2025-08-26T12:59:39.787Z",
+  "resultTime": "2025-07-10T20:30:49.609Z/2025-08-26T12:59:39.787Z",
+  "Thing": {
+    "@iot.selfLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Things(573)",
+    "@iot.id": 573,
+    "name": "Group23 Test Thing",
+    "description": "Group23 Mushroom box",
+    "properties": {
+      "DevEUI": "70B3D57ED005ECB7",
+      "groupNo": 23,
+      "frequency": "30 s"
+    }
+  },
+  "Sensor": {
+    "@iot.selfLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Sensors(598)",
+    "@iot.id": 598,
+    "name": "Grove - Digital Light Sensor",
+    "description": "This module is based on the I2C light-to-digital converter TSL2561 to transform light intensity to a digital signal.",
+    "encodingType": "text/html",
+    "metadata": "https://wiki.seeedstudio.com/Grove-Digital_Light_Sensor/"
+  },
+  "ObservedProperty": {
+    "@iot.selfLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/ObservedProperties(25)",
+    "@iot.id": 25,
+    "name": "Luminous Flux",
+    "definition": "http://www.qudt.org/qudt/owl/1.0.0/quantity/Instances.html#LuminousFlux",
+    "description": "visible light"
+  },
+  "ObservedProperty@iot.navigationLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1670)/ObservedProperty",
+  "Sensor@iot.navigationLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1670)/Sensor",
+  "Thing@iot.navigationLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1670)/Thing",
+  "Observations@iot.navigationLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1670)/Observations"
+}

@@ -1,6 +1,6 @@
 # FROST SensorThings configuration
 
-The final presentation preserved two code screenshots that document how Cayenne LPP channels were mapped to FROST Datastreams. `channel_mapping.example.js` transcribes that mapping, with the device identifier replaced by an environment variable.
+`channel_mapping.js` connects the five Cayenne LPP channels used by the device to the corresponding FROST Datastreams. The device identifier is read from an environment variable.
 
 ## Historical channel mapping
 
@@ -13,6 +13,10 @@ The final presentation preserved two code screenshots that document how Cayenne 
 | 5 | Box humidity | [1673](https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1673)) |
 
 The public FROST server still returns metadata and observations for the project. Because it is course infrastructure, availability and write permissions may change.
+
+## Saved API metadata
+
+The `snapshots/` directory contains formatted JSON files for the project Thing and every Datastream used by the box and weather dashboard. These files preserve the SensorThings structure directly in the repository and can be read without contacting the live service.
 
 ## Download archived observations
 

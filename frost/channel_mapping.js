@@ -1,5 +1,5 @@
-// Reconstructed from the FROST/MongoDB mapping shown in the final presentation.
-// Set DEVICE_EUI in the environment instead of committing a real device ID.
+// Cayenne LPP to FROST SensorThings mapping for the mushroom box.
+// Set DEVICE_EUI in the environment instead of committing a device ID.
 
 const FROST_BASE_URL = "https://gi3.gis.lrg.tum.de/frost/v1.1";
 

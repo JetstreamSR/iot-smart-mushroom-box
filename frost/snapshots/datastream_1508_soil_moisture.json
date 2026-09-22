@@ -1,0 +1,51 @@
+{
+  "@iot.selfLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1508)",
+  "@iot.id": 1508,
+  "name": "Group23_mushroom_moisture",
+  "description": "The moisture inside the mushroom soil.",
+  "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+  "unitOfMeasurement": {
+    "name": "Level",
+    "symbol": "L",
+    "definition": "https://en.wikipedia.org/wiki/Relative_humidity"
+  },
+  "observedArea": {
+    "type": "Point",
+    "coordinates": [
+      48.171594012,
+      11.561421897
+    ]
+  },
+  "phenomenonTime": "2025-06-14T13:18:14.613Z/2025-08-26T12:59:39.787Z",
+  "resultTime": "2025-06-14T13:18:14.613Z/2025-08-26T12:59:39.787Z",
+  "Thing": {
+    "@iot.selfLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Things(573)",
+    "@iot.id": 573,
+    "name": "Group23 Test Thing",
+    "description": "Group23 Mushroom box",
+    "properties": {
+      "DevEUI": "70B3D57ED005ECB7",
+      "groupNo": 23,
+      "frequency": "30 s"
+    }
+  },
+  "Sensor": {
+    "@iot.selfLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Sensors(596)",
+    "@iot.id": 596,
+    "name": "Grove - Capacitive Moisture Sensor",
+    "description": "The Grove - Capacitive Moisture Sensor (Corrosion Resistant) is a soil moisture sensor based on capacitance changes.",
+    "encodingType": "text/html",
+    "metadata": "https://wiki.seeedstudio.com/Grove-Capacitive_Moisture_Sensor-Corrosion-Resistant/"
+  },
+  "ObservedProperty": {
+    "@iot.selfLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/ObservedProperties(1)",
+    "@iot.id": 1,
+    "name": "Relative Humidity",
+    "definition": "https://en.wikipedia.org/wiki/Relative_humidity",
+    "description": "The relative humidity"
+  },
+  "ObservedProperty@iot.navigationLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1508)/ObservedProperty",
+  "Sensor@iot.navigationLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1508)/Sensor",
+  "Thing@iot.navigationLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1508)/Thing",
+  "Observations@iot.navigationLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1508)/Observations"
+}

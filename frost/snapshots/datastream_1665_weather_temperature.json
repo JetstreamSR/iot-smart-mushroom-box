@@ -1,0 +1,50 @@
+{
+  "@iot.selfLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1665)",
+  "@iot.id": 1665,
+  "name": "WeatherAPI_Munich_Temperature",
+  "description": "Munich temperature from WeatherAPI",
+  "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+  "unitOfMeasurement": {
+    "name": "Degree Celsius",
+    "symbol": "°C",
+    "definition": "http://www.qudt.org/qudt/owl/1.0.0/unit/Instances.html#DegreeCelsius"
+  },
+  "observedArea": {
+    "type": "Point",
+    "coordinates": [
+      11.5755,
+      48.1374
+    ]
+  },
+  "phenomenonTime": "2025-07-07T22:19:16Z/2025-09-28T19:53:19Z",
+  "resultTime": "2025-07-07T22:19:16Z/2025-09-28T19:53:19Z",
+  "Thing": {
+    "@iot.selfLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Things(606)",
+    "@iot.id": 606,
+    "name": "WeatherAPI-Munich",
+    "description": "Virtual Thing for Munich weather from WeatherAPI",
+    "properties": {
+      "source": "WeatherAPI",
+      "location": "Munich"
+    }
+  },
+  "Sensor": {
+    "@iot.selfLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Sensors(648)",
+    "@iot.id": 648,
+    "name": "WeatherAPI-Sensor",
+    "description": "Pulls temperature, humidity and wind from WeatherAPI",
+    "encodingType": "application/json",
+    "metadata": "https://api.weatherapi.com/"
+  },
+  "ObservedProperty": {
+    "@iot.selfLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/ObservedProperties(530)",
+    "@iot.id": 530,
+    "name": "Temperature",
+    "definition": "http://schema.org/Temperature",
+    "description": "Air temperature in °C"
+  },
+  "ObservedProperty@iot.navigationLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1665)/ObservedProperty",
+  "Sensor@iot.navigationLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1665)/Sensor",
+  "Thing@iot.navigationLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1665)/Thing",
+  "Observations@iot.navigationLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1665)/Observations"
+}

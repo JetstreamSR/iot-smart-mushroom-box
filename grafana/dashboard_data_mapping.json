@@ -1,0 +1,56 @@
+{
+  "title": "IoT-Based Smart Mushroom Growing Box",
+  "service": "https://gi3.gis.lrg.tum.de/grafana/",
+  "frostBaseUrl": "https://gi3.gis.lrg.tum.de/frost/v1.1",
+  "monitoringPeriod": {
+    "from": "2025-07-08T00:00:00Z",
+    "to": "2025-07-14T00:00:00Z"
+  },
+  "panels": [
+    {
+      "title": "Weather API temperature",
+      "visualization": "gauge",
+      "datastreamIds": [1665]
+    },
+    {
+      "title": "Box temperature",
+      "visualization": "gauge",
+      "datastreamIds": [1507]
+    },
+    {
+      "title": "Temperature outside vs inside",
+      "visualization": "time-series",
+      "datastreamIds": [1665, 1507]
+    },
+    {
+      "title": "Weather API humidity",
+      "visualization": "gauge",
+      "datastreamIds": [1666]
+    },
+    {
+      "title": "Box humidity",
+      "visualization": "gauge",
+      "datastreamIds": [1673]
+    },
+    {
+      "title": "Humidity outside vs inside",
+      "visualization": "time-series",
+      "datastreamIds": [1666, 1673]
+    },
+    {
+      "title": "Soil moisture",
+      "visualization": "time-series",
+      "datastreamIds": [1508]
+    },
+    {
+      "title": "Box illuminance",
+      "visualization": "time-series",
+      "datastreamIds": [1670]
+    },
+    {
+      "title": "Box indoor air quality",
+      "visualization": "time-series",
+      "datastreamIds": [1671]
+    }
+  ]
+}

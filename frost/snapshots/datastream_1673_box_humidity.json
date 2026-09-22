@@ -1,0 +1,51 @@
+{
+  "@iot.selfLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1673)",
+  "@iot.id": 1673,
+  "name": "Group23_mushroom_BoxHumidity",
+  "description": "The humidity inside mushroom box",
+  "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+  "unitOfMeasurement": {
+    "name": "Relative Humidity",
+    "symbol": "RH",
+    "definition": "https://en.wikipedia.org/wiki/Relative_humidity"
+  },
+  "observedArea": {
+    "type": "Point",
+    "coordinates": [
+      48.171594012,
+      11.561421897
+    ]
+  },
+  "phenomenonTime": "2025-07-10T20:30:49.609Z/2025-08-26T12:59:39.787Z",
+  "resultTime": "2025-07-10T20:30:49.609Z/2025-08-26T12:59:39.787Z",
+  "Thing": {
+    "@iot.selfLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Things(573)",
+    "@iot.id": 573,
+    "name": "Group23 Test Thing",
+    "description": "Group23 Mushroom box",
+    "properties": {
+      "DevEUI": "70B3D57ED005ECB7",
+      "groupNo": 23,
+      "frequency": "30 s"
+    }
+  },
+  "Sensor": {
+    "@iot.selfLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Sensors(597)",
+    "@iot.id": 597,
+    "name": "Grove - Temperature Humidity Pressure Gas Sensor(BME680)",
+    "description": "The Grove-Temperature&Humidity&Pressure&Gas Sensor(BME680) is a multiple function sensor which can measure temperature, pressure, humidity and gas at the same time.",
+    "encodingType": "text/html",
+    "metadata": "https://wiki.seeedstudio.com/Grove-Temperature_Humidity_Pressure_Gas_Sensor_BME680/"
+  },
+  "ObservedProperty": {
+    "@iot.selfLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/ObservedProperties(1)",
+    "@iot.id": 1,
+    "name": "Relative Humidity",
+    "definition": "https://en.wikipedia.org/wiki/Relative_humidity",
+    "description": "The relative humidity"
+  },
+  "ObservedProperty@iot.navigationLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1673)/ObservedProperty",
+  "Sensor@iot.navigationLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1673)/Sensor",
+  "Thing@iot.navigationLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1673)/Thing",
+  "Observations@iot.navigationLink": "https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1673)/Observations"
+}

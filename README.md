@@ -62,17 +62,25 @@ The humidity threshold was based on the behavior of the physical prototype. The 
 
 ## Data platform and visualization
 
-The course deployment mapped the incoming Cayenne LPP channels to SensorThings entities in FROST. The public course server still exposes the project Thing and its observations through the SensorThings API:
+Incoming Cayenne LPP messages were mapped to SensorThings Datastreams in FROST. The channel configuration, API metadata, and data access utility are stored in [`frost/`](frost/).
 
-- [Group 23 mushroom box Thing](https://gi3.gis.lrg.tum.de/frost/v1.1/Things(573))
-- [box temperature](https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1507)), [soil moisture](https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1508)), [illuminance](https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1670)), [indoor air quality](https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1671)), and [box humidity](https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1673));
-- [Munich weather temperature](https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1665)) and [humidity](https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1666)) used for the indoor/outdoor comparison.
+| Measurement | LPP channel | Datastream | Saved metadata |
+| --- | ---: | ---: | --- |
+| Box temperature | 1 | 1507 | [JSON](frost/snapshots/datastream_1507_box_temperature.json) |
+| Growing-medium moisture | 2 | 1508 | [JSON](frost/snapshots/datastream_1508_soil_moisture.json) |
+| Illuminance | 3 | 1670 | [JSON](frost/snapshots/datastream_1670_box_illuminance.json) |
+| Indoor air quality | 4 | 1671 | [JSON](frost/snapshots/datastream_1671_indoor_air_quality.json) |
+| Box humidity | 5 | 1673 | [JSON](frost/snapshots/datastream_1673_box_humidity.json) |
+| Munich temperature | — | 1665 | [JSON](frost/snapshots/datastream_1665_weather_temperature.json) |
+| Munich humidity | — | 1666 | [JSON](frost/snapshots/datastream_1666_weather_humidity.json) |
 
-A scheduled GitHub Actions workflow requested current Munich conditions from WeatherAPI and posted them to FROST every five minutes. Grafana then compared outdoor weather with the box measurements. The course [Grafana service](https://gi3.gis.lrg.tum.de/grafana/) now redirects to its login page; the original dashboard screenshot is preserved below because the presentation did not contain a recoverable dashboard UID or public share link.
+The complete [Thing metadata](frost/snapshots/thing_573.json) is also included. Current observations can be downloaded from the [live SensorThings endpoint](https://gi3.gis.lrg.tum.de/frost/v1.1/Things(573)) with `frost/download_observations.py`.
+
+A scheduled GitHub Actions workflow requested current Munich conditions from WeatherAPI and posted them to FROST every five minutes. Grafana compared the outdoor observations with the box measurements and displayed the soil moisture, illuminance, and indoor air quality series. The panel-to-Datastream configuration is documented in [`grafana/`](grafana/), together with the [course Grafana service](https://gi3.gis.lrg.tum.de/grafana/).
 
 ![Grafana dashboard used to monitor the prototype](docs/figures/grafana_dashboard.png)
 
-The [`frost/`](frost/) directory contains the channel mapping reconstructed from the submitted code screenshots and a utility for downloading the archived observations. The [`weather_uploader.py`](automation/weather_uploader.py) and disabled workflow example reproduce the documented weather-to-FROST process without exposing the original API key.
+The [`weather_uploader.py`](automation/weather_uploader.py) and workflow definition in [`automation/`](automation/) implement the WeatherAPI-to-FROST data flow with credentials supplied through environment variables.
 
 ## Cultivation outcome
 
@@ -94,16 +102,19 @@ The experiment also revealed limits of the enclosure. The fan and watering syste
 │       └── smart_mushroom_box.ino
 ├── frost/
 │   ├── README.md
-│   ├── channel_mapping.example.js
+│   ├── channel_mapping.js
 │   └── download_observations.py
 ├── automation/
 │   ├── README.md
-│   ├── weather-upload.example.yml
+│   ├── weather-upload.yml
 │   └── weather_uploader.py
+├── grafana/
+│   ├── README.md
+│   └── dashboard_data_mapping.json
 └── docs/figures/
 ```
 
-The repository contains a cleaned, credential-free version of the integrated Arduino firmware, four early hardware test sketches, the FROST channel mapping recovered from the final presentation, and a reproducible weather-upload example. The original LoRaWAN and WeatherAPI credentials are intentionally excluded.
+The repository contains a credential-free version of the integrated Arduino firmware, four hardware test sketches, the FROST channel mapping and metadata, a SensorThings data downloader, and the weather-upload automation. LoRaWAN and WeatherAPI credentials are supplied locally and are excluded from version control.
 
 ## Team
 
