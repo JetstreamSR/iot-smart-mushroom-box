@@ -48,6 +48,21 @@ Inside the enclosure, the BME680, TSL2561, and capacitive moisture sensor monito
 
 ![Annotated interior view showing the three environmental sensors](docs/figures/hardware_inside_annotated.png)
 
+## Arduino firmware
+
+The Arduino code used to operate the prototype is included in [`firmware/`](firmware/). The integrated sketch reads the environmental sensors, displays local status, controls the fan and water pump, packages measurements with Cayenne LPP, and transmits them through LoRaWAN.
+
+| File | Purpose |
+| --- | --- |
+| [`smart_mushroom_box.ino`](firmware/smart_mushroom_box/smart_mushroom_box.ino) | Integrated sensing, actuator control, LCD display, Cayenne LPP encoding, and LoRaWAN transmission |
+| [`secrets.example.h`](firmware/smart_mushroom_box/secrets.example.h) | Credential template for local LoRaWAN configuration |
+| [`bme680_test.ino`](firmware/examples/bme680_test/bme680_test.ino) | BME680 environmental-sensor test |
+| [`light_sensor_test.ino`](firmware/examples/light_sensor_test/light_sensor_test.ino) | TSL2561 illuminance-sensor test |
+| [`soil_moisture_test.ino`](firmware/examples/soil_moisture_test/soil_moisture_test.ino) | Capacitive moisture-sensor test |
+| [`lcd_test.ino`](firmware/examples/lcd_test/lcd_test.ino) | Grove RGB LCD test |
+
+Setup requirements and library dependencies are documented in the [firmware guide](firmware/README.md). Device identifiers and the LoRaWAN AppKey are loaded locally through `secrets.h`, which is excluded from the public repository.
+
 ## Control logic
 
 The team refined the thresholds through literature review and observation of the box:
