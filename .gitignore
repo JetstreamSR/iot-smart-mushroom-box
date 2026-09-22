@@ -1,6 +1,8 @@
 .DS_Store
 .idea/
 *.zip
+.env
+automation/.env
 
 # Local LoRaWAN credentials
 firmware/smart_mushroom_box/secrets.h

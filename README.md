@@ -99,6 +99,8 @@ A scheduled GitHub Actions workflow requested current Munich conditions from Wea
 
 ![Grafana dashboard used to monitor the prototype](docs/figures/grafana_dashboard.png)
 
+**Data-quality note:** The dashboard was captured while the sensors and data pipeline were still being debugged. The large excursions in the lower growing-medium moisture, illuminance, and indoor-air-quality panels are debugging artifacts and do not represent equally abrupt physical changes inside the box. The screenshot documents the complete monitoring interface; quantitative interpretation should use validated time intervals and exclude these transient test values.
+
 The [`weather_uploader.py`](automation/weather_uploader.py) and workflow definition in [`automation/`](automation/) implement the WeatherAPI-to-FROST data flow with credentials supplied through environment variables.
 
 ## Cultivation outcome

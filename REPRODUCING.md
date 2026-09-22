@@ -154,6 +154,17 @@ FROST_HUMIDITY_DATASTREAM_ID
 FROST_API_TOKEN              # only when the server requires a bearer token
 ```
 
+For local execution, create a private environment file from the included template:
+
+```bash
+cp automation/.env.example automation/.env
+set -a
+source automation/.env
+set +a
+```
+
+The real API key and server credentials remain outside the repository. The GitHub Actions workflow reads the same values from repository secrets.
+
 Test payload generation before writing data:
 
 ```bash
@@ -177,6 +188,8 @@ Connect Grafana to the FROST SensorThings API and create the nine panels listed 
 - time series for growing-medium moisture, illuminance, and indoor air quality.
 
 For each panel, query the relevant Datastream's `Observations`, use `phenomenonTime` as the time field, and use `result` as the numeric field. Set the dashboard time range to the period being inspected. The project dashboard used 8–13 July 2025 for the final indoor/outdoor comparison.
+
+The archived dashboard image includes a sensor and data-pipeline debugging period. Large excursions in the growing-medium moisture, illuminance, and indoor-air-quality panels are transient test artifacts rather than corresponding abrupt changes in the chamber environment. Exclude these intervals from quantitative analysis.
 
 ## 9. End-to-end verification
 
