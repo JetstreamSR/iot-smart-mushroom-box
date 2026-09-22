@@ -29,9 +29,9 @@ flowchart LR
 
 ## Hardware prototype
 
-The box combined the controller, antenna, LCD, relays, fan, pump, and environmental sensors in one working setup.
+The complete setup combined the growing enclosure with the controller, antenna, LCD, relays, ventilation fan, water pump, and environmental sensors.
 
-![Sensors installed inside the mushroom growing box](docs/figures/hardware_inside.jpg)
+![Annotated overview of the complete mushroom growing box and its hardware](docs/figures/hardware_overview.png)
 
 The main components were:
 
@@ -43,6 +43,10 @@ The main components were:
 | Capacitive moisture sensor | Relative moisture readings from the growing medium |
 | Relays, ventilation fan, and water pump | Environmental control |
 | RGB LCD | Local status display |
+
+Inside the enclosure, the BME680, TSL2561, and capacitive moisture sensor monitored the air, light, and growing medium respectively.
+
+![Environmental sensors installed inside the mushroom growing box](docs/figures/hardware_inside.jpg)
 
 ## Control logic
 
@@ -91,4 +95,3 @@ The repository contains a cleaned, credential-free version of the final Arduino 
 - Ziyu Hu
 
 The project was developed collaboratively at TUM. The repository documents the shared course outcome and preserves the public, reusable part of the implementation.
-
