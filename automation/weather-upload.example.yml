@@ -1,0 +1,24 @@
+name: Upload current weather to FROST
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+  upload-weather:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Upload observations
+        env:
+          WEATHERAPI_KEY: ${{ secrets.WEATHERAPI_KEY }}
+          FROST_BASE_URL: ${{ secrets.FROST_BASE_URL }}
+          FROST_TEMPERATURE_DATASTREAM_ID: ${{ secrets.FROST_TEMPERATURE_DATASTREAM_ID }}
+          FROST_HUMIDITY_DATASTREAM_ID: ${{ secrets.FROST_HUMIDITY_DATASTREAM_ID }}
+          FROST_API_TOKEN: ${{ secrets.FROST_API_TOKEN }}
+        run: python automation/weather_uploader.py --location Munich --submit
+

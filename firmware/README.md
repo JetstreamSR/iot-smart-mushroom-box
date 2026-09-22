@@ -2,6 +2,8 @@
 
 The public sketch preserves the sensing, LoRaWAN transmission, display, and actuator-control logic used in the course prototype while keeping credentials outside version control.
 
+The `examples/` directory also preserves the separate BME680, TSL2561, soil-moisture, and RGB-LCD test sketches used while assembling the prototype.
+
 ## Required hardware and libraries
 
 - Seeeduino LoRaWAN with Grove base shield
@@ -23,4 +25,3 @@ The sketch reflects the library APIs and board configuration used during the 202
 ## Calibrate before use
 
 The fan and pump thresholds came from the original enclosure and cultivation experiment. Verify sensor readings, relay polarity, actuator power requirements, and safe operating thresholds before using the sketch with another setup.
-

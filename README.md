@@ -44,9 +44,9 @@ The main components were:
 | Relays, ventilation fan, and water pump | Environmental control |
 | RGB LCD | Local status display |
 
-Inside the enclosure, the BME680, TSL2561, and capacitive moisture sensor monitored the air, light, and growing medium respectively.
+Inside the enclosure, the BME680, TSL2561, and capacitive moisture sensor monitored the air, light, and growing medium respectively. The annotated interior view identifies them as components 7, 8, and 9.
 
-![Environmental sensors installed inside the mushroom growing box](docs/figures/hardware_inside.jpg)
+![Annotated interior view showing the three environmental sensors](docs/figures/hardware_inside_annotated.png)
 
 ## Control logic
 
@@ -62,9 +62,17 @@ The humidity threshold was based on the behavior of the physical prototype. The 
 
 ## Data platform and visualization
 
-The course deployment mapped the incoming Cayenne LPP channels to SensorThings entities in FROST. A scheduled data-upload workflow added weather observations, and Grafana displayed both indoor and outdoor conditions.
+The course deployment mapped the incoming Cayenne LPP channels to SensorThings entities in FROST. The public course server still exposes the project Thing and its observations through the SensorThings API:
+
+- [Group 23 mushroom box Thing](https://gi3.gis.lrg.tum.de/frost/v1.1/Things(573))
+- [box temperature](https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1507)), [soil moisture](https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1508)), [illuminance](https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1670)), [indoor air quality](https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1671)), and [box humidity](https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1673));
+- [Munich weather temperature](https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1665)) and [humidity](https://gi3.gis.lrg.tum.de/frost/v1.1/Datastreams(1666)) used for the indoor/outdoor comparison.
+
+A scheduled GitHub Actions workflow requested current Munich conditions from WeatherAPI and posted them to FROST every five minutes. Grafana then compared outdoor weather with the box measurements. The course [Grafana service](https://gi3.gis.lrg.tum.de/grafana/) now redirects to its login page; the original dashboard screenshot is preserved below because the presentation did not contain a recoverable dashboard UID or public share link.
 
 ![Grafana dashboard used to monitor the prototype](docs/figures/grafana_dashboard.png)
+
+The [`frost/`](frost/) directory contains the channel mapping reconstructed from the submitted code screenshots and a utility for downloading the archived observations. The [`weather_uploader.py`](automation/weather_uploader.py) and disabled workflow example reproduce the documented weather-to-FROST process without exposing the original API key.
 
 ## Cultivation outcome
 
@@ -80,13 +88,22 @@ The experiment also revealed limits of the enclosure. The fan and watering syste
 .
 ├── firmware/
 │   ├── README.md
+│   ├── examples/
 │   └── smart_mushroom_box/
 │       ├── secrets.example.h
 │       └── smart_mushroom_box.ino
+├── frost/
+│   ├── README.md
+│   ├── channel_mapping.example.js
+│   └── download_observations.py
+├── automation/
+│   ├── README.md
+│   ├── weather-upload.example.yml
+│   └── weather_uploader.py
 └── docs/figures/
 ```
 
-The repository contains a cleaned, credential-free version of the final Arduino prototype code. The live FROST, Grafana, weather-service, and LoRaWAN infrastructure belonged to the course deployment and is not reproduced here.
+The repository contains a cleaned, credential-free version of the integrated Arduino firmware, four early hardware test sketches, the FROST channel mapping recovered from the final presentation, and a reproducible weather-upload example. The original LoRaWAN and WeatherAPI credentials are intentionally excluded.
 
 ## Team
 

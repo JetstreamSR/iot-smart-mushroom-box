@@ -115,12 +115,11 @@ void transmitMeasurements(
 ) {
   lpp.reset();
   lpp.addTemperature(1, temperature);
-  lpp.addRelativeHumidity(2, humidity);
-  lpp.addAnalogInput(3, soilMoisture);
-  lpp.addLuminosity(4, visibleLux);
-  lpp.addAnalogInput(5, iaqSensor.iaq);
-  lpp.addAnalogInput(6, iaqSensor.co2Equivalent);
-  lpp.addAnalogInput(7, iaqSensor.breathVocEquivalent);
+  // Preserve the channel order used by the submitted FROST mapping.
+  lpp.addRelativeHumidity(2, soilMoisture);
+  lpp.addLuminosity(3, visibleLux);
+  lpp.addAnalogInput(4, iaqSensor.iaq);
+  lpp.addAnalogInput(5, humidity);
 
   lora.transferPacket(lpp.getBuffer(), lpp.getSize(), 5);
 }
