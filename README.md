@@ -4,6 +4,8 @@ An IoT prototype for monitoring and regulating the environment inside a small mu
 
 This was a group project completed in 2025 for **Geo Sensor Networks and the Internet of Things** at the Technical University of Munich (TUM).
 
+For a complete rebuild sequence covering hardware, Arduino, LoRaWAN, FROST, WeatherAPI, and Grafana, see the **[reproduction guide](REPRODUCING.md)**.
+
 ![Harvested oyster mushrooms grown in the prototype](docs/figures/harvest.jpg)
 
 ## Project overview
@@ -62,6 +64,8 @@ The Arduino code used to operate the prototype is included in [`firmware/`](firm
 | [`lcd_test.ino`](firmware/examples/lcd_test/lcd_test.ino) | Grove RGB LCD test |
 
 Setup requirements and library dependencies are documented in the [firmware guide](firmware/README.md). Device identifiers and the LoRaWAN AppKey are loaded locally through `secrets.h`, which is excluded from the public repository.
+
+The end-to-end [reproduction guide](REPRODUCING.md) provides the bill of materials, pin assignments, recorded library versions, Cayenne channel definitions, cloud configuration, verification steps, and experimental procedure.
 
 ## Control logic
 
@@ -126,7 +130,8 @@ The experiment also revealed limits of the enclosure. The fan and watering syste
 ├── grafana/
 │   ├── README.md
 │   └── dashboard_data_mapping.json
-└── docs/figures/
+├── docs/figures/
+└── REPRODUCING.md
 ```
 
 The repository contains a credential-free version of the integrated Arduino firmware, four hardware test sketches, the FROST channel mapping and metadata, a SensorThings data downloader, and the weather-upload automation. LoRaWAN and WeatherAPI credentials are supplied locally and are excluded from version control.
